@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
+<title>Encuesta de prestaciones · Red Ambiental</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="./image-slot.js"></script>
 <style>
-  body{margin:0;background:#0b2f6b;}
+  body{margin:0;background:#0b2f6b;font-family:'Inter',sans-serif;}
   a{color:#8dc63f;}
   a:hover{color:#a4d968;}
+  img{max-width:100%;}
 </style>
-</helmet>
+</head>
+<body>
 
-<div style="font-family:'Inter',sans-serif;background:#0b2f6b;color:#fff;">
+<div style="color:#fff;">
 
   <div style="background:#fff;padding:16px clamp(16px,5vw,48px);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;">
-    <img src="assets/red-ambiental-logo.png" alt="Red Ambiental" style="height:26px;">
+    <img src="red-ambiental-logo.png" alt="Red Ambiental" style="height:26px;">
     <span style="font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#5c6675;">Comunicación interna · Beneficios 2022–2026</span>
   </div>
 
@@ -48,34 +45,54 @@
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:0;margin-bottom:14px;">
-      <sc-for list="{{ cards }}" as="c" hint-placeholder-count="5">
-        <div style="display:flex;justify-content:center;">
-          <div style="background:#eef1f6;border-radius:20px;padding:8px 22px;font-weight:700;color:#0b2f6b;font-size:15px;">{{ c.year }}</div>
-        </div>
-      </sc-for>
+      <div style="display:flex;justify-content:center;"><div style="background:#eef1f6;border-radius:20px;padding:8px 22px;font-weight:700;color:#0b2f6b;font-size:15px;">2022</div></div>
+      <div style="display:flex;justify-content:center;"><div style="background:#eef1f6;border-radius:20px;padding:8px 22px;font-weight:700;color:#0b2f6b;font-size:15px;">2024</div></div>
+      <div style="display:flex;justify-content:center;"><div style="background:#eef1f6;border-radius:20px;padding:8px 22px;font-weight:700;color:#0b2f6b;font-size:15px;">2025</div></div>
+      <div style="display:flex;justify-content:center;"><div style="background:#eef1f6;border-radius:20px;padding:8px 22px;font-weight:700;color:#0b2f6b;font-size:15px;">2025</div></div>
+      <div style="display:flex;justify-content:center;"><div style="background:#eef1f6;border-radius:20px;padding:8px 22px;font-weight:700;color:#0b2f6b;font-size:15px;">2026</div></div>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));align-items:center;margin-bottom:24px;">
-      <sc-for list="{{ cards }}" as="c" hint-placeholder-count="5">
-        <div style="display:flex;align-items:center;">
-          <div style="flex:1;height:2px;background:#d7dde6;"></div>
-          <div style="width:10px;height:10px;border-radius:50%;background:{{ c.highlight ? '#8dc63f' : '#0b2f6b' }};flex-shrink:0;"></div>
-          <div style="flex:1;height:2px;background:#d7dde6;"></div>
-        </div>
-      </sc-for>
+      <div style="display:flex;align-items:center;"><div style="flex:1;height:2px;background:#d7dde6;"></div><div style="width:10px;height:10px;border-radius:50%;background:#0b2f6b;flex-shrink:0;"></div><div style="flex:1;height:2px;background:#d7dde6;"></div></div>
+      <div style="display:flex;align-items:center;"><div style="flex:1;height:2px;background:#d7dde6;"></div><div style="width:10px;height:10px;border-radius:50%;background:#0b2f6b;flex-shrink:0;"></div><div style="flex:1;height:2px;background:#d7dde6;"></div></div>
+      <div style="display:flex;align-items:center;"><div style="flex:1;height:2px;background:#d7dde6;"></div><div style="width:10px;height:10px;border-radius:50%;background:#8dc63f;flex-shrink:0;"></div><div style="flex:1;height:2px;background:#d7dde6;"></div></div>
+      <div style="display:flex;align-items:center;"><div style="flex:1;height:2px;background:#d7dde6;"></div><div style="width:10px;height:10px;border-radius:50%;background:#8dc63f;flex-shrink:0;"></div><div style="flex:1;height:2px;background:#d7dde6;"></div></div>
+      <div style="display:flex;align-items:center;"><div style="flex:1;height:2px;background:#d7dde6;"></div><div style="width:10px;height:10px;border-radius:50%;background:#0b2f6b;flex-shrink:0;"></div><div style="flex:1;height:2px;background:#d7dde6;"></div></div>
     </div>
 
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-bottom:36px;">
-      <sc-for list="{{ cards }}" as="c" hint-placeholder-count="5">
-        <div style="background:#fff;border:1px solid #e4e8ef;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;">
-          <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#8a93a3;">{{ c.label }}</div>
-          <div style="font-size:26px;font-weight:800;color:#0b2f6b;">{{ c.value }}</div>
-          <div style="display:inline-flex;align-self:flex-start;background:#eef7dc;color:#5a8f1d;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;">{{ c.badge }}</div>
-          <div style="font-size:13px;line-height:1.5;color:#5c6675;">{{ c.desc }}</div>
-        </div>
-      </sc-for>
+      <div style="background:#fff;border:1px solid #e4e8ef;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#8a93a3;">Fondo de ahorro · arranca</div>
+        <div style="font-size:26px;font-weight:800;color:#0b2f6b;">2.5%</div>
+        <div style="display:inline-flex;align-self:flex-start;background:#eef7dc;color:#5a8f1d;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;">Inicio del beneficio</div>
+        <div style="font-size:13px;line-height:1.5;color:#5c6675;">Se implementó el fondo de ahorro para todo el personal operativo.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #e4e8ef;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#8a93a3;">Fondo de ahorro · incremento</div>
+        <div style="font-size:26px;font-weight:800;color:#0b2f6b;">3.5%</div>
+        <div style="display:inline-flex;align-self:flex-start;background:#eef7dc;color:#5a8f1d;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;">antes 2.5%</div>
+        <div style="font-size:13px;line-height:1.5;color:#5c6675;">Incremento del Fondo de Ahorro en 2024.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #e4e8ef;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#8a93a3;">Fondo de ahorro · incremento</div>
+        <div style="font-size:26px;font-weight:800;color:#0b2f6b;">4%</div>
+        <div style="display:inline-flex;align-self:flex-start;background:#eef7dc;color:#5a8f1d;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;">antes 3.5%</div>
+        <div style="font-size:13px;line-height:1.5;color:#5c6675;">El Fondo de Ahorro sube de 3.5% a 4%.</div>
+      </div>
+      <div style="background:#fff;border:1px solid #e4e8ef;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#8a93a3;">Aguinaldo · incremento</div>
+        <div style="font-size:26px;font-weight:800;color:#0b2f6b;">19 días</div>
+        <div style="display:inline-flex;align-self:flex-start;background:#eef7dc;color:#5a8f1d;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;">antes 15 días</div>
+        <div style="font-size:13px;line-height:1.5;color:#5c6675;">El aguinaldo pasa de 15 a 19 días (+4 días).</div>
+      </div>
+      <div style="background:#fff;border:1px solid #e4e8ef;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:10px;">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:#8a93a3;">Aguinaldo · incremento</div>
+        <div style="font-size:26px;font-weight:800;color:#0b2f6b;">24 días</div>
+        <div style="display:inline-flex;align-self:flex-start;background:#eef7dc;color:#5a8f1d;font-size:12px;font-weight:700;padding:4px 10px;border-radius:20px;">antes 19 días</div>
+        <div style="font-size:13px;line-height:1.5;color:#5c6675;">El aguinaldo incrementa de 19 a 24 días, 5 días más.</div>
+      </div>
     </div>
 
-    <div style="background:#0b2f6b;border-radius:16px;padding:36px 44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-bottom:44px;">
+    <div style="background:#0b2f6b;border-radius:16px;padding:36px 44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-bottom:8px;">
       <div>
         <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#8fa6d6;margin-bottom:10px;">Fondo de Ahorro</div>
         <div style="font-size:32px;font-weight:800;color:#8dc63f;margin-bottom:8px;">2.5% → 4%</div>
@@ -87,7 +104,6 @@
         <div style="font-size:13px;line-height:1.6;color:#cfe3ff;">de aguinaldo entre 2025 y 2026 — 9 días más de aguinaldo en total.</div>
       </div>
     </div>
-
   </div>
 
   <div style="background:#0b2f6b;padding:clamp(28px,6vw,48px) clamp(20px,5vw,48px);">
@@ -96,15 +112,14 @@
       <span style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#cfe3ff;">Un mensaje para ti</span>
     </div>
     <div style="background:#04122f;border-radius:16px;overflow:hidden;">
-      <div style="position:relative;width:100%;aspect-ratio:16/9;">
-        <image-slot id="video-thumb" shape="rect" placeholder="Video de YouTube — reemplaza con la miniatura o pega el enlace" style="width:100%;height:100%;"></image-slot>
+      <div style="position:relative;width:100%;aspect-ratio:16/9;background:#0a1c40;display:flex;align-items:center;justify-content:center;">
+        <iframe src="https://www.youtube.com/embed/REEMPLAZA_CON_TU_VIDEO_ID" title="Video de YouTube" style="width:100%;height:100%;border:0;" allowfullscreen></iframe>
       </div>
       <div style="padding:20px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;">
         <div>
           <div style="font-weight:700;font-size:15px;">Beneficios Red Ambiental 2022-2026</div>
           <div style="font-size:13px;color:#93a6c9;">Video institucional</div>
         </div>
-        <a href="#" style="background:#0b2f6b;border:1px solid #22407d;color:#fff;font-size:13px;font-weight:600;padding:10px 18px;border-radius:8px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;">▶ Mirar en YouTube</a>
       </div>
     </div>
   </div>
@@ -122,28 +137,10 @@
   </div>
 
   <div style="padding:28px clamp(20px,5vw,48px);display:flex;align-items:center;justify-content:center;background:#0b2f6b;">
-    <img src="assets/red-ambiental-logo.png" alt="Red Ambiental" style="height:32px;">
+    <img src="red-ambiental-logo.png" alt="Red Ambiental" style="height:32px;">
   </div>
 
   </div>
 </div>
-
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  renderVals() {
-    return {
-      cards: [
-        { year: 2022, highlight: false, label: "Fondo de ahorro · arranca", value: "2.5%", badge: "Inicio del beneficio", desc: "Se implementó el fondo de ahorro para todo el personal operativo." },
-        { year: 2024, highlight: false, label: "Fondo de ahorro · incremento", value: "3.5%", badge: "antes 2.5%", desc: "Incremento del Fondo de Ahorro en 2024." },
-        { year: 2025, highlight: true, label: "Fondo de ahorro · incremento", value: "4%", badge: "antes 3.5%", desc: "El Fondo de Ahorro sube de 3.5% a 4%." },
-        { year: 2025, highlight: true, label: "Aguinaldo · incremento", value: "19 días", badge: "antes 15 días", desc: "El aguinaldo pasa de 15 a 19 días (+4 días)." },
-        { year: 2026, highlight: false, label: "Aguinaldo · incremento", value: "24 días", badge: "antes 19 días", desc: "El aguinaldo incrementa de 19 a 24 días, 5 días más." }
-      ]
-    };
-  }
-}
-
-</script>
 </body>
 </html>
